@@ -8,7 +8,7 @@
 // @contributor J F
 // @contributor Glorfindel
 // @attribution Brock Adams (https://github.com/BrockA)
-// @version     1.20.3
+// @version     1.20.4
 // @updateURL   https://raw.githubusercontent.com/Charcoal-SE/Userscripts/master/fdsc/fdsc.meta.js
 // @downloadURL https://raw.githubusercontent.com/Charcoal-SE/Userscripts/master/fdsc/fdsc.user.js
 // @supportURL  https://github.com/Charcoal-SE/Userscripts/issues
@@ -348,13 +348,12 @@
                 // Retrieve feedback
                 $.get("https://metasmoke.erwaysoftware.com/api/v2.0/feedbacks/post/" + data_[0].id +
                       "?key=" + fdsc.metasmokeKey, function (data) {
-                  console.log(data);
                   // Determine # of feedbacks for each type
                   var tps = 0;
                   var fps = 0;
                   var naa = 0;
                   for (var i = 0; i < data.items.length; i++) {
-                    switch (data.items[0].feedback_type.charAt(0)) {
+                    switch (data.items[i].feedback_type.charAt(0)) {
                       case "t":
                         tps++;
                         break;
