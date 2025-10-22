@@ -8,7 +8,7 @@
 // @contributor J F
 // @contributor Glorfindel
 // @attribution Brock Adams (https://github.com/BrockA)
-// @version     1.20.4
+// @version     1.20.5
 // @updateURL   https://raw.githubusercontent.com/Charcoal-SE/Userscripts/master/fdsc/fdsc.meta.js
 // @downloadURL https://raw.githubusercontent.com/Charcoal-SE/Userscripts/master/fdsc/fdsc.user.js
 // @supportURL  https://github.com/Charcoal-SE/Userscripts/issues
@@ -368,19 +368,19 @@
                     }
                   }
 
-                  var fpButtonStyle = "style='color:rgba(255,0,0,0.5);' onMouseOver='this.style.color=\"rgba(255,0,0,1)\"' onMouseOut='this.style.color=\"rgba(255,0,0,0.5)\"'";
-                  var tpButtonStyle = "style='color:rgba(0,100,0,0.5);' onMouseOver='this.style.color=\"rgba(0,100,0,1)\"' onMouseOut='this.style.color=\"rgba(0,100,0,0.5)\"'";
+                  var fpButtonStyle = "class='fc-red-500' onMouseOver='this.className=\"fc-red-300\"' onMouseOut='this.className=\"fc-red-500\"'";
+                  var tpButtonStyle = "class='fc-green-500' onMouseOver='this.className=\"fc-green-300\"' onMouseOut='this.className=\"fc-green-500\"'";
 
                   var isAnswer = $(".popup-actions").parents(".answer").length !== 0;
 
                   // Build status
                   var status = "<div id='smokey-report'><strong>Smokey report: ";
-                  status += "<span style='color:darkgreen'>" + tps + " tp</span>, ";
-                  status += "<span style='color:red'>" + fps + " fp</span>, ";
+                  status += "<span class='fc-green-400'>" + tps + " tp</span>, ";
+                  status += "<span class='fc-red-400'>" + fps + " fp</span>, ";
 
                   // Don't add naa if the dialog opened for a question
                   if (isAnswer) {
-                    status += "<span style='color:#7c5500'>" + naa + " naa</span>, ";
+                    status += "<span class='fc-orange-400'>" + naa + " naa</span>, ";
                   }
 
                   status += fdsc.autoflagged + "</strong>";
